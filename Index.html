@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .centrar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 750px;
+        width: 360px;
+    }
+
+    .dflex{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .content{
+        display: block;
+    }
+
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .button2 {
+        background-color: #a12e2e; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .pos{
+        position: absolute;
+        top: 75%;
+        left: 15%;
+    }
+
+    .pos2{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+    }
+
+    #logo{
+        width: 100%;
+    }
+</style>
+<body>
+    <div class="centrar">
+        <div class="content">
+        <img id="logo" src="https://imgs.search.brave.com/eFWfkW_WaMe5C0RUxNefKOMr0Un822gutrroDC_yPLA/rs:fit:244:274:1/g:ce/aHR0cHM6Ly9tZWRp/YTEudGVub3IuY29t/L2ltYWdlcy9hYmE4/YmNiMmM5ZDRlODdk/ZWMzZWM3MzljZGEx/NWE4OC90ZW5vci5n/aWY_aXRlbWlkPTEy/Njc2MDc2.gif" alt="">
+            <h4>¿Quieres pasar 10 años conmigo?</h4>
+            <div class="dflex">
+                <button id="toggleButton" class="button pos2">Acepto</button>
+            </div>
+        </div>
+        <button id="botonQueSeMueve" class="button2 pos">No</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script>
+        $("#botonQueSeMueve").hover(function () {
+          $("#botonQueSeMueve").css("top", `${Math.random() * 700}px`);
+          $("#botonQueSeMueve").css("left", `${Math.random() * 300}px`);
+        });
+      </script>
+      <script>
+        let button = document.getElementById('toggleButton');
+        let logo = document.getElementById('logo');
+
+        let darkImageURL = "https://media4.giphy.com/media/lqSzKGwumVSOYkwgJH/giphy.gif?cid=ecf05e479cymdcd5ixkrvupgucx9m07z8fzmp48daed9dgxb&rid=giphy.gif&ct=g";
+
+        button.addEventListener('click', function(event) {
+            document.body.style.background = "black";
+            logo.src = darkImageURL;
+        });
+      </script>
+</body>
+</html>
